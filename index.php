@@ -22,6 +22,9 @@
         td:first-child {
             text-align: center;
         }
+        .container > form {
+            margin-bottom: 10px;
+        }
         .container {
             width: 1200px;
             margin:  0 auto;
@@ -36,11 +39,10 @@
         $user = 'root';
         $pass = 'BJz5c8PI'; 
         $options = [
-            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, 
         ];
 
-        $dsn = "mysql:host=$host;dbname=$dbname";
+        $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8";
         $pdo = new PDO($dsn, $user, $pass, $options);
 
         $name = $_POST['name'] ?? '';
